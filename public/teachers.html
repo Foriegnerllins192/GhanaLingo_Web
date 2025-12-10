@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Teachers - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html" class="active">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container">
+        <h1>Online Teachers</h1>
+        <p>Connect with native speakers and professional language instructors for personalized one-on-one lessons.</p>
+        
+        <div class="features" style="background: none; padding: 0;">
+            <div class="feature-card">
+                <h3>Find a Teacher</h3>
+                <p>Browse our network of certified teachers specializing in various Ghanaian languages.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Book a Session</h3>
+                <p>Schedule lessons at your convenience with flexible booking options.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Pay Securely</h3>
+                <p>Safe and secure payment processing for all transactions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Video Lessons</h3>
+                <p>Connect via Zoom, Google Meet, or our built-in WebRTC video platform.</p>
+            </div>
+        </div>
+        
+        <h2 style="margin-top: 2rem;">Available Teachers</h2>
+        
+        <div class="language-grid">
+            <!-- Teacher 1 -->
+            <div class="language-card">
+                <div style="background-color: #CE1126; height: 150px; display: flex; align-items: center; justify-content: center; color: white;">
+                    <h2>Kwame Asante</h2>
+                </div>
+                <div class="language-card-content">
+                    <h3>Twi Specialist</h3>
+                    <p>10+ years teaching Twi to foreigners. Native speaker from Kumasi.</p>
+                    <p><strong>Rate:</strong> $25/hour</p>
+                    <a href="#" class="btn-secondary" onclick="bookTeacher('Kwame Asante')">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Teacher 2 -->
+            <div class="language-card">
+                <div style="background-color: #006B3F; height: 150px; display: flex; align-items: center; justify-content: center; color: white;">
+                    <h2>Afi Ewe</h2>
+                </div>
+                <div class="language-card-content">
+                    <h3>Ewe Specialist</h3>
+                    <p>Expert in Ewe language and culture. From Ho, Volta Region.</p>
+                    <p><strong>Rate:</strong> $30/hour</p>
+                    <a href="#" class="btn-secondary" onclick="bookTeacher('Afi Ewe')">Book Now</a>
+                </div>
+            </div>
+            
+            <!-- Teacher 3 -->
+            <div class="language-card">
+                <div style="background-color: #FCD116; height: 150px; display: flex; align-items: center; justify-content: center; color: black;">
+                    <h2>Nii Okailey</h2>
+                </div>
+                <div class="language-card-content">
+                    <h3>Ga Specialist</h3>
+                    <p>Native Ga speaker from Accra. Specializes in Ga dialects.</p>
+                    <p><strong>Rate:</strong> $20/hour</p>
+                    <a href="#" class="btn-secondary" onclick="bookTeacher('Nii Okailey')">Book Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 2rem 0;">
+            <a href="#" class="btn-primary">View All Teachers</a>
+        </div>
+        
+        <!-- Apply to Teach Button -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <button id="apply-teach-btn" class="btn-primary" style="padding: 15px 30px; font-size: 1.2rem;" onclick="showApplicationForm()">
+                Apply to Teach
+            </button>
+        </div>
+        
+        <!-- Teacher Application Form -->
+        <div id="teacher-application-form" class="teacher-application-form">
+            <h2>Teacher Application Form</h2>
+            <p>Please fill out the form below to apply to become a teacher on Ghana Lingo.</p>
+            
+            <form id="application-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subjects">Subjects/Skills</label>
+                    <input type="text" id="subjects" placeholder="e.g. Twi, Ewe, Ga" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Experience</label>
+                    <textarea id="experience" placeholder="Tell us about your teaching experience..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cv">Upload CV</label>
+                    <input type="file" id="cv" accept=".pdf,.doc,.docx">
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button type="submit" class="btn-primary">Submit Application</button>
+                    <button type="button" class="btn-secondary" onclick="hideApplicationForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function bookTeacher(teacherName) {
+            alert(`Booking session with ${teacherName}. In a real implementation, this would open a booking form.`);
+        }
+        
+        function showApplicationForm() {
+            document.getElementById('teacher-application-form').classList.add('visible');
+            document.getElementById('apply-teach-btn').style.display = 'none';
+        }
+        
+        function hideApplicationForm() {
+            document.getElementById('teacher-application-form').classList.remove('visible');
+            document.getElementById('apply-teach-btn').style.display = 'inline-block';
+        }
+        
+        // Handle form submission
+        document.getElementById('application-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subjects = document.getElementById('subjects').value;
+            const experience = document.getElementById('experience').value;
+            
+            // In a real implementation, this would submit to a server
+            console.log(`Teacher application submitted for ${fullName}`);
+            
+            // Show success message
+            alert(`Thank you, ${fullName}! Your application has been submitted successfully. We will review it and contact you soon.`);
+            
+            // Reset form and hide it
+            this.reset();
+            hideApplicationForm();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container">
+        <h1>Word Scramble Game</h1>
+        <p>Unscramble the jumbled words to practice spelling and vocabulary.</p>
+        
+        <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 2rem 0; text-align: center;">
+            <h2 style="color: #CE1126;">Twi Vocabulary Challenge</h2>
+            
+            <div style="margin: 2rem 0;">
+                <h3>Scrambled Word:</h3>
+                <div id="scrambled-word" style="font-size: 2rem; font-weight: bold; color: #006B3F; margin: 1rem 0;">
+                    Loading...
+                </div>
+            </div>
+            
+            <div style="margin: 2rem 0;">
+                <h3>Your Answer:</h3>
+                <input type="text" id="user-answer" style="padding: 0.5rem; font-size: 1.2rem; text-align: center; border: 2px solid #ddd; border-radius: 5px; width: 300px; max-width: 100%;">
+            </div>
+            
+            <div style="margin: 2rem 0;">
+                <button class="btn-primary" onclick="checkAnswer()" style="margin: 0 0.5rem;">Check Answer</button>
+                <button class="btn-secondary" onclick="skipWord()" style="margin: 0 0.5rem;">Skip</button>
+                <button class="btn-secondary" onclick="getHint()" style="margin: 0 0.5rem;">Hint</button>
+            </div>
+            
+            <div id="feedback" style="margin: 2rem 0; min-height: 2rem;"></div>
+            
+            <div style="margin: 2rem 0;">
+                <p>Words Correct: <span id="correct-count">0</span>/<span id="total-words">10</span></p>
+                <p>Score: <span id="score">0</span></p>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="games.html" class="btn-secondary">Back to Games</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample words for the game
+        const words = [
+            { word: "Mambo", scrambled: "obamm" },
+            { word: "Medaase", scrambled: "aesadme" },
+            { word: "Nsɔ", scrambled: "ɔsn" },
+            { word: "Fie", scrambled: "eif" },
+            { word: "Obɔfoɔ", scrambled: "oɔfɔbO" },
+            { word: "Aane", scrambled: "naea" },
+            { word: "Daabi", scrambled: "biaad" },
+            { word: "Adabo", scrambled: "baodA" },
+            { word: "Yɛsrɛ", scrambled: "rɛsɛY" },
+            { word: "Baie", scrambled: "eiba" }
+        ];
+        
+        let currentIndex = 0;
+        let correctCount = 0;
+        let score = 0;
+        let usedHints = 0;
+        
+        // Initialize the game
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNextWord();
+            updateNavigation();
+        });
+        
+        // Load the next word
+        function loadNextWord() {
+            if (currentIndex >= words.length) {
+                // Game completed
+                document.getElementById('scrambled-word').textContent = "Game Completed!";
+                document.getElementById('feedback').innerHTML = `<div style="color: #006B3F; font-weight: bold;">Congratulations! You scored ${score} points!</div>`;
+                document.getElementById('user-answer').disabled = true;
+                return;
+            }
+            
+            document.getElementById('scrambled-word').textContent = words[currentIndex].scrambled;
+            document.getElementById('user-answer').value = '';
+            document.getElementById('user-answer').disabled = false;
+            document.getElementById('feedback').innerHTML = '';
+            document.getElementById('correct-count').textContent = correctCount;
+            document.getElementById('total-words').textContent = words.length;
+            document.getElementById('score').textContent = score;
+            
+            // Focus on input field
+            document.getElementById('user-answer').focus();
+        }
+        
+        // Check the user's answer
+        function checkAnswer() {
+            const userAnswer = document.getElementById('user-answer').value.trim();
+            const correctWord = words[currentIndex].word;
+            
+            if (userAnswer.toLowerCase() === correctWord.toLowerCase()) {
+                // Correct answer
+                correctCount++;
+                score += 10 - usedHints; // Award points minus hints used
+                document.getElementById('feedback').innerHTML = `<div style="color: #006B3F; font-weight: bold;">Correct! Well done!</div>`;
+                usedHints = 0; // Reset hints for next word
+                
+                // Move to next word after delay
+                setTimeout(() => {
+                    currentIndex++;
+                    loadNextWord();
+                }, 1500);
+            } else {
+                // Incorrect answer
+                document.getElementById('feedback').innerHTML = `<div style="color: #CE1126; font-weight: bold;">Incorrect. Try again!</div>`;
+            }
+        }
+        
+        // Skip the current word
+        function skipWord() {
+            document.getElementById('feedback').innerHTML = `<div style="color: #CE1126;">Skipped. The answer was: <strong>${words[currentIndex].word}</strong></div>`;
+            usedHints = 0; // Reset hints
+            
+            // Move to next word after delay
+            setTimeout(() => {
+                currentIndex++;
+                loadNextWord();
+            }, 2000);
+        }
+        
+        // Provide a hint
+        function getHint() {
+            const correctWord = words[currentIndex].word;
+            if (usedHints < correctWord.length - 1) {
+                usedHints++;
+                const hint = correctWord.substring(0, usedHints) + '_'.repeat(correctWord.length - usedHints);
+                document.getElementById('feedback').innerHTML = `<div style="color: #FCD116; font-weight: bold;">Hint: ${hint}</div>`;
+            } else {
+                document.getElementById('feedback').innerHTML = `<div style="color: #FCD116; font-weight: bold;">Hint: The word is "${correctWord}"</div>`;
+            }
+        }
+        
+        // Allow Enter key to submit answer
+        document.getElementById('user-answer').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="logout.html" class="btn-login">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container">
+        <h1>Student Dashboard</h1>
+        <div id="user-info-placeholder">
+            <p>Welcome back! Loading your information...</p>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; margin: 2rem 0;">
+            <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); flex: 1; margin-right: 1rem;">
+                <h3>Your Progress</h3>
+                <div style="font-size: 2rem; font-weight: bold; color: #006B3F;">75%</div>
+                <div style="color: #666;">Twi Level 1</div>
+            </div>
+            
+            <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); flex: 1; margin: 0 1rem;">
+                <h3>Current Streak</h3>
+                <div style="font-size: 2rem; font-weight: bold; color: #CE1126;">12 days</div>
+                <div style="color: #666;">Keep it up!</div>
+            </div>
+            
+            <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); flex: 1; margin-left: 1rem;">
+                <h3>XP Points</h3>
+                <div style="font-size: 2rem; font-weight: bold; color: #FCD116;">1,250</div>
+                <div style="color: #666;">+50 today</div>
+            </div>
+        </div>
+        
+        <div style="display: flex; margin: 2rem 0;">
+            <div style="flex: 2; margin-right: 2rem;">
+                <h2>Continue Learning</h2>
+                <div class="language-card" style="margin-bottom: 1rem;">
+                    <div style="padding: 1.5rem;">
+                        <h3>Twi Level 1 - Step 3: Family Members</h3>
+                        <p>Continue where you left off with family vocabulary.</p>
+                        <a href="twi-level1-step3.html" class="btn-secondary">Continue</a>
+                    </div>
+                </div>
+                
+                <h2 style="margin-top: 2rem;">Recommended Next</h2>
+                <div class="language-card" style="margin-bottom: 1rem;">
+                    <div style="padding: 1.5rem;">
+                        <h3>Twi Level 2 - Step 1: Advanced Greetings</h3>
+                        <p>Unlock when you complete Level 1.</p>
+                        <a href="#" class="btn-secondary" style="background: #ccc; cursor: not-allowed;">Locked</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="flex: 1;">
+                <h2>Achievements</h2>
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 50px; height: 50px; background: #006B3F; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 1rem;">🏆</div>
+                        <div>
+                            <h4>First Steps</h4>
+                            <p>Completed Step 1 in any language</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 50px; height: 50px; background: #FCD116; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; margin-right: 1rem;">🔥</div>
+                        <div>
+                            <h4>Streak Builder</h4>
+                            <p>7-day learning streak</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 50px; height: 50px; background: #CE1126; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 1rem;">⭐</div>
+                        <div>
+                            <h4>Vocabulary Master</h4>
+                            <p>Learned 50 new words</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Display user information when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Call the displayUserInfo function from auth.js
+            if (typeof displayUserInfo === 'function') {
+                displayUserInfo();
+            }
+        });
+    </script>
+</body>
+</html>

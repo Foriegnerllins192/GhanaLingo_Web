@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twi Level 1 - Step 4 - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Ghana Lingo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container step-container">
+        <h1>Twi Level 1 - Step 4: Numbers</h1>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-steps">
+                <div class="progress-step completed">1</div>
+                <div class="progress-step completed">2</div>
+                <div class="progress-step completed">3</div>
+                <div class="progress-step active">4</div>
+                <div class="progress-step">5</div>
+            </div>
+        </div>
+        
+        <!-- Vocabulary List -->
+        <div class="vocabulary-list">
+            <h2>Vocabulary</h2>
+            <div class="vocabulary-item">
+                <span class="word">Bɛɛ</span>
+                <span class="pronunciation">(be)</span>
+                <button class="audio-btn" onclick="playAudio('bee')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Abien</span>
+                <span class="pronunciation">(a-bien)</span>
+                <button class="audio-btn" onclick="playAudio('abien')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Ahati</span>
+                <span class="pronunciation">(a-ha-ti)</span>
+                <button class="audio-btn" onclick="playAudio('ahati')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Anan</span>
+                <span class="pronunciation">(a-nan)</span>
+                <button class="audio-btn" onclick="playAudio('anan')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Aduonu</span>
+                <span class="pronunciation">(a-du-o-nu)</span>
+                <button class="audio-btn" onclick="playAudio('aduonu')">🔊</button>
+            </div>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div class="quiz-section">
+            <h2>Quiz: Number Recognition</h2>
+            <p class="quiz-question">What number is "Ahati" in English?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">1</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">2</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'correct')">3</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">4</div>
+            </div>
+        </div>
+        
+        <!-- Mini Activity -->
+        <div class="mini-activity">
+            <h2>Mini Activity: Counting Practice</h2>
+            <p>Listen and repeat the numbers:</p>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 1rem 0;">
+                <div style="text-align: center; margin: 0.5rem;">
+                    <div style="font-size: 2rem; background: #f5f5f5; padding: 1rem; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">1</div>
+                    <p>Bɛɛ</p>
+                    <button onclick="playAudio('bee')">🔊</button>
+                </div>
+                <div style="text-align: center; margin: 0.5rem;">
+                    <div style="font-size: 2rem; background: #f5f5f5; padding: 1rem; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">2</div>
+                    <p>Abien</p>
+                    <button onclick="playAudio('abien')">🔊</button>
+                </div>
+                <div style="text-align: center; margin: 0.5rem;">
+                    <div style="font-size: 2rem; background: #f5f5f5; padding: 1rem; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">3</div>
+                    <p>Ahati</p>
+                    <button onclick="playAudio('ahati')">🔊</button>
+                </div>
+                <div style="text-align: center; margin: 0.5rem;">
+                    <div style="font-size: 2rem; background: #f5f5f5; padding: 1rem; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">4</div>
+                    <p>Anan</p>
+                    <button onclick="playAudio('anan')">🔊</button>
+                </div>
+                <div style="text-align: center; margin: 0.5rem;">
+                    <div style="font-size: 2rem; background: #f5f5f5; padding: 1rem; border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">5</div>
+                    <p>Aduonu</p>
+                    <button onclick="playAudio('aduonu')">🔊</button>
+                </div>
+            </div>
+            <p>Practice counting from 1 to 10 in Twi. Record yourself saying the numbers:</p>
+            <textarea placeholder="Type the numbers 1-10 in Twi after practicing..." rows="3" style="width: 100%; margin-top: 1rem;"></textarea>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <a href="twi-level1-step3.html" class="btn-nav prev">← Previous</a>
+            <a href="twi-level1-step5.html" class="btn-nav next">Next →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

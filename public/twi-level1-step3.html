@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twi Level 1 - Step 3 - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Ghana Lingo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container step-container">
+        <h1>Twi Level 1 - Step 3: Family Members</h1>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-steps">
+                <div class="progress-step completed">1</div>
+                <div class="progress-step completed">2</div>
+                <div class="progress-step active">3</div>
+                <div class="progress-step">4</div>
+                <div class="progress-step">5</div>
+            </div>
+        </div>
+        
+        <!-- Vocabulary List -->
+        <div class="vocabulary-list">
+            <h2>Vocabulary</h2>
+            <div class="vocabulary-item">
+                <span class="word">Nana</span>
+                <span class="pronunciation">(na-na)</span>
+                <button class="audio-btn" onclick="playAudio('nana')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Maame</span>
+                <span class="pronunciation">(ma-me)</span>
+                <button class="audio-btn" onclick="playAudio('maame')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Kunu</span>
+                <span class="pronunciation">(ku-nu)</span>
+                <button class="audio-btn" onclick="playAudio('kunu')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Abaa</span>
+                <span class="pronunciation">(a-ba)</span>
+                <button class="audio-btn" onclick="playAudio('abaa')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Akwamu</span>
+                <span class="pronunciation">(a-kwa-mu)</span>
+                <button class="audio-btn" onclick="playAudio('akwamu')">🔊</button>
+            </div>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div class="quiz-section">
+            <h2>Quiz: Match the Family Member</h2>
+            <p class="quiz-question">What does "Maame" mean in English?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Grandfather</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'correct')">Mother</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Father</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Sister</div>
+            </div>
+        </div>
+        
+        <!-- Mini Activity -->
+        <div class="mini-activity">
+            <h2>Mini Activity: Family Tree</h2>
+            <p>Draw your family tree and label each member in Twi:</p>
+            <div style="border: 1px dashed #ccc; padding: 1rem; margin: 1rem 0;">
+                <p>Example:</p>
+                <p>Nana (Grandfather)</p>
+                <p>├── Maame (Mother)</p>
+                <p>│   ├── Me (Me)</p>
+                <p>│   └── Kunu (Brother)</p>
+                <p>└── Abaa (Father)</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;└── Akwamu (Uncle)</p>
+            </div>
+            <p>Upload a photo of your family tree:</p>
+            <input type="file" accept="image/*" style="margin: 1rem 0;">
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <a href="twi-level1-step2.html" class="btn-nav prev">← Previous</a>
+            <a href="twi-level1-step4.html" class="btn-nav next">Next →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

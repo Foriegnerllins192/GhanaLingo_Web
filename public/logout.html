@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Out - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container" style="text-align: center; padding: 3rem 0;">
+        <h1>Logging Out</h1>
+        <p>You are being logged out. Redirecting to homepage...</p>
+        <div class="spinner"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Handle logout process
+        document.addEventListener('DOMContentLoaded', function() {
+            // Clear session storage
+            sessionStorage.removeItem('user');
+            
+            // Make API call to logout (clear server session and cookies)
+            fetch('/api/logout', {
+                method: 'POST',
+                credentials: 'include'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Logout response:', data);
+                // Update navigation
+                updateNavigation();
+                // Redirect to home after a short delay
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Logout API error:', err);
+                // Even if API fails, redirect to home
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twi Level 1 - Step 2 - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+        <script src="js/audio.js"></script>
+  <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Ghana Lingo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container step-container">
+        <h1>Twi Level 1 - Step 2: Introductions</h1>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-steps">
+                <div class="progress-step completed">1</div>
+                <div class="progress-step active">2</div>
+                <div class="progress-step">3</div>
+                <div class="progress-step">4</div>
+                <div class="progress-step">5</div>
+            </div>
+        </div>
+        
+        <!-- Vocabulary List -->
+        <div class="vocabulary-list">
+            <h2>Vocabulary</h2>
+            <div class="vocabulary-item">
+                <span class="word">Me din de</span>
+                <span class="pronunciation">(me din de)</span>
+                <button class="audio-btn" onclick="playAudio('medinde')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Mɛyɛ</span>
+                <span class="pronunciation">(me-yɛ)</span>
+                <button class="audio-btn" onclick="playAudio('meyɛ')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Wo din de</span>
+                <span class="pronunciation">(wo din de)</span>
+                <button class="audio-btn" onclick="playAudio('wodinde')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Meda wo ase</span>
+                <span class="pronunciation">(me-da wo a-se)</span>
+                <button class="audio-btn" onclick="playAudio('medawoase')">🔊</button>
+            </div>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div class="quiz-section">
+            <h2>Quiz: Fill in the Blank</h2>
+            <p class="quiz-question">Complete the phrase: "Me din de ______"</p>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Mɛyɛ</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'correct')">Kofi</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Meda wo ase</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Akwaaba</div>
+            </div>
+        </div>
+        
+        <!-- Mini Activity -->
+        <div class="mini-activity">
+            <h2>Mini Activity: Role Play</h2>
+            <p>Practice introducing yourself with a partner:</p>
+            <p><strong>Person A:</strong> Mɔre! Me din de Kofi.</p>
+            <p><strong>Person B:</strong> Mɔre! Mean din de Ama.</p>
+            <p><strong>Person A:</strong> Meda wo ase!</p>
+            <p><strong>Person B:</strong> Meda wo ase!</p>
+            <button class="btn-secondary" onclick="playAudio('introduction')">🔊 Listen to Conversation</button>
+            <p>Record yourself practicing this conversation:</p>
+            <textarea placeholder="Type your practice notes here..." rows="3" style="width: 100%; margin-top: 1rem;"></textarea>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <a href="twi-level1-step1.html" class="btn-nav prev">← Previous</a>
+            <a href="twi-level1-step3.html" class="btn-nav next">Next →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

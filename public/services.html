@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container">
+
+             <div class="features" style="background: none; padding: 0;">
+         <div class="feature-card">
+             <h3>Voiceover Services</h3>
+             <p>Professional voice actors for commercials, documentaries, e-learning, and more in any Ghanaian language.</p>
+         </div>
+         <div class="feature-card">
+             <h3>Transcription</h3>
+             <p>Accurate transcription of audio/video content in English and Ghanaian languages.</p>
+         </div>
+         <div class="feature-card">
+             <h3>Subtitling</h3>
+             <p>Add subtitles to your videos in multiple languages for wider accessibility.</p>
+         </div>
+         <div class="feature-card">
+             <h3>Tribute Writing</h3>
+             <p>Cultural and linguistic expertise for obituaries, eulogies, and ceremonial speeches.</p>
+         </div>
+     </div>
+
+
+
+        <h1>Voiceover, Subtitling & Transcription Services</h1>
+        <p>Professional language services for individuals and businesses. Submit your request below.</p>
+        
+        <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 2rem 0;">
+            <form id="service-form">
+                <div style="margin-bottom: 1rem;">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" required style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="language">Language *</label>
+                    <select id="language" required style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                        <option value="">Select a language</option>
+                        <option value="tw">Twi</option>
+                        <option value="ee">Ewe</option>
+                        <option value="gaa">Ga</option>
+                        <option value="fat">Fante</option>
+                        <option value="dag">Dagbani</option>
+                        <option value="ha">Hausa</option>
+                        <option value="dga">Dagaare</option>
+                        <option value="nzi">Nzema</option>
+                        <option value="gjn">Gonja</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="service-type">Service Type *</label>
+                    <select id="service-type" required style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                        <option value="">Select a service</option>
+                        <option value="voiceover">Voiceover</option>
+                        <option value="transcription">Transcription</option>
+                        <option value="subtitling">Subtitling</option>
+                        <option value="tribute_writing">Tribute Writing</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="file">Upload File (Optional)</label>
+                    <input type="file" id="file" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                </div>
+                
+                <div style="margin-bottom: 1rem;">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" rows="4" placeholder="Please provide any additional details about your request..." style="width: 100%; padding: 1rem; margin-top: 0.5rem;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary" style="width: 100%;">Submit Request</button>
+            </form>
+        </div>
+        </section> 
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

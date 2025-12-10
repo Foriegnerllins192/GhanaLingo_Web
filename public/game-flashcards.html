@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container">
+        <h1>Flashcards Game</h1>
+        <p>Review vocabulary with digital flashcards. Click on a card to flip it and reveal the translation.</p>
+        
+        <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 2rem 0; text-align: center;">
+            <h2 style="color: #CE1126;">Twi Vocabulary</h2>
+            
+            <!-- Flashcard -->
+            <div id="flashcard" style="width: 300px; height: 200px; margin: 2rem auto; perspective: 1000px; cursor: pointer;" onclick="flipCard()">
+                <div id="flashcard-inner" style="position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d;">
+                    <div class="flashcard-face flashcard-front" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: #006B3F; color: white; display: flex; align-items: center; justify-content: center; border-radius: 10px;">
+                        <h3 id="word">Hello</h3>
+                    </div>
+                    <div class="flashcard-face flashcard-back" style="position: absolute; width: 100%; height: 100%; backface-visibility: hidden; background: #FCD116; color: black; display: flex; align-items: center; justify-content: center; border-radius: 10px; transform: rotateY(180deg);">
+                        <h3 id="translation">Mambo</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin: 1rem 0;">
+                <button class="btn-secondary" onclick="prevCard()">Previous</button>
+                <button class="btn-primary" onclick="nextCard()">Next</button>
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <p>Card <span id="current-card">1</span> of <span id="total-cards">10</span></p>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="games.html" class="btn-secondary">Back to Games</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample flashcard data
+        const flashcards = [
+            { word: "Hello", translation: "Mambo" },
+            { word: "Goodbye", translation: "Baie" },
+            { word: "Thank you", translation: "Medaase" },
+            { word: "Please", translation: "Yɛsrɛ wo" },
+            { word: "Yes", translation: "Aane" },
+            { word: "No", translation: "Daabi" },
+            { word: "Water", translation: "Nsɔ" },
+            { word: "Food", translation: "Adabo" },
+            { word: "House", translation: "Fie" },
+            { word: "Friend", translation: "Obɔfoɔ" }
+        ];
+        
+        let currentCardIndex = 0;
+        let isFlipped = false;
+        
+        // Initialize the game
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCard();
+            updateNavigation();
+        });
+        
+        // Flip the card
+        function flipCard() {
+            const cardInner = document.getElementById('flashcard-inner');
+            if (isFlipped) {
+                cardInner.style.transform = 'rotateY(0deg)';
+            } else {
+                cardInner.style.transform = 'rotateY(180deg)';
+            }
+            isFlipped = !isFlipped;
+        }
+        
+        // Go to next card
+        function nextCard() {
+            if (currentCardIndex < flashcards.length - 1) {
+                currentCardIndex++;
+                resetCard();
+                updateCard();
+            }
+        }
+        
+        // Go to previous card
+        function prevCard() {
+            if (currentCardIndex > 0) {
+                currentCardIndex--;
+                resetCard();
+                updateCard();
+            }
+        }
+        
+        // Update card display
+        function updateCard() {
+            document.getElementById('word').textContent = flashcards[currentCardIndex].word;
+            document.getElementById('translation').textContent = flashcards[currentCardIndex].translation;
+            document.getElementById('current-card').textContent = currentCardIndex + 1;
+            document.getElementById('total-cards').textContent = flashcards.length;
+        }
+        
+        // Reset card to front
+        function resetCard() {
+            const cardInner = document.getElementById('flashcard-inner');
+            cardInner.style.transform = 'rotateY(0deg)';
+            isFlipped = false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,770 @@
+/* Global Styles */
+:root {
+    --primary-red: #CE1126;
+    --primary-gold: #FCD116;
+    --primary-green: #006B3F;
+    --primary-black: #000000;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-red);
+}
+
+nav ul li a.active {
+    color: var(--primary-red);
+    font-weight: bold;
+}
+
+/* Login Button Style */
+.btn-login {
+    display: inline-block;
+    background-color: var(--primary-red);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid var(--primary-red);
+}
+
+.btn-login:hover {
+    background-color: transparent;
+    color: var(--primary-red) !important;
+}
+
+/* Spinner for loading states */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../images/ghana-flag-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-gold);
+    color: var(--primary-black);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid var(--primary-gold);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-gold);
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 0;
+    background-color: var(--light-gray);
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: var(--dark-gray);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-black);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* Languages Page */
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.language-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.language-card:hover {
+    transform: translateY(-10px);
+}
+
+.language-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.language-card-content {
+    padding: 1.5rem;
+}
+
+.language-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.language-card p {
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-black);
+}
+
+/* Twi Level 1 Intro Page */
+.twi-intro {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.circular-layout {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-gold));
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Twi Main Page - Circular Layout */
+.twi-main {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 3rem;
+}
+
+.circle-layout {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto 3rem;
+}
+
+.main-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.circle-content {
+    color: white;
+    text-align: center;
+}
+
+.circle-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.circle-content p {
+    font-size: 1.1rem;
+}
+
+.step-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border: 3px solid var(--primary-green);
+    z-index: 20;
+}
+
+.step-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.step-content {
+    text-align: center;
+    color: var(--primary-green);
+}
+
+.step-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.step-title {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Positioning for each step */
+.step-1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.step-2 {
+    top: 15%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.step-3 {
+    bottom: 15%;
+    right: 0;
+    transform: translateY(50%);
+}
+
+.step-4 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.step-5 {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.progress-overview {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.progress-overview h2 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.progress-container {
+    text-align: left;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-green), var(--primary-gold));
+    border-radius: 10px;
+    transition: width 0.5s;
+}
+
+/* Twi Level 1 Steps */
+.step-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.progress-bar-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.progress-bar-steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #ddd;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+    z-index: 30;
+}
+
+.progress-step.active {
+    background-color: var(--primary-gold);
+    color: var(--primary-black);
+}
+
+.progress-step.completed {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.vocabulary-list {
+    margin: 2rem 0;
+}
+
+.vocabulary-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.vocabulary-item:last-child {
+    border-bottom: none;
+}
+
+.word {
+    flex: 1;
+    font-weight: bold;
+}
+
+.pronunciation {
+    margin: 0 1rem;
+    color: #666;
+}
+
+.audio-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.quiz-section {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.quiz-question {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.quiz-option {
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.quiz-option:hover {
+    background-color: var(--primary-gold);
+}
+
+.mini-activity {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.btn-nav {
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-nav.prev {
+    background-color: #ddd;
+    color: var(--dark-gray);
+}
+
+.btn-nav.next {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+.btn-nav.prev:hover {
+    background-color: #ccc;
+}
+
+.btn-nav.next:hover {
+    background-color: var(--primary-black);
+}
+
+/* Culture Section */
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.culture-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 300px; /* Perfect square as requested */
+    display: flex;
+    flex-direction: column;
+}
+
+.culture-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.culture-card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.culture-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.culture-card p {
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+    flex: 1;
+}
+
+.btn-culture {
+    display: inline-block;
+    background-color: var(--primary-red);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+    margin-top: auto;
+}
+
+.btn-culture:hover {
+    background-color: var(--primary-black);
+}
+
+/* Games Layout */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.game-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+}
+
+.game-icon {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.game-card-content {
+    padding: 1.5rem;
+}
+
+.game-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.game-card p {
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+/* Teacher Application Form */
+.teacher-application-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+    display: none;
+}
+
+.teacher-application-form.visible {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .quiz-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .circle-layout {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .main-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .step-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .step-number {
+        font-size: 1.4rem;
+    }
+    
+    .step-title {
+        font-size: 0.7rem;
+    }
+}

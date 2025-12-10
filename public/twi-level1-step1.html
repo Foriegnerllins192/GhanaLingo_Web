@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twi Level 1 - Step 1 - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/audio.js"></script>
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Ghana Lingo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="languages.html">Languages</a></li>
+                    <li><a href="culture.html">Culture & History</a></li>
+                    <li><a href="translation.html">Translation</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="teachers.html">Online Teachers</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container step-container">
+        <h1>Twi Level 1 - Step 1: Greetings</h1>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-steps">
+                <div class="progress-step active">1</div>
+                <div class="progress-step">2</div>
+                <div class="progress-step">3</div>
+                <div class="progress-step">4</div>
+                <div class="progress-step">5</div>
+            </div>
+        </div>
+        
+        <!-- Vocabulary List -->
+        <div class="vocabulary-list">
+            <h2>Vocabulary</h2>
+            <div class="vocabulary-item">
+                <span class="word">Mɔre</span>
+                <span class="pronunciation">(mo-re)</span>
+                <button class="audio-btn" onclick="playAudio('more')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Akwaaba</span>
+                <span class="pronunciation">(ak-wa-a-ba)</span>
+                <button class="audio-btn" onclick="playAudio('akwaaba')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Yɛn ara</span>
+                <span class="pronunciation">(yen a-ra)</span>
+                <button class="audio-btn" onclick="playAudio('yenara')">🔊</button>
+            </div>
+            <div class="vocabulary-item">
+                <span class="word">Mam</span>
+                <span class="pronunciation">(mam)</span>
+                <button class="audio-btn" onclick="playAudio('mam')">🔊</button>
+            </div>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div class="quiz-section">
+            <h2>Quiz: Match the Greeting</h2>
+            <p class="quiz-question">What does "Akwaaba" mean in English?</p>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="checkAnswer(this, 'correct')">Welcome</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Goodbye</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Thank you</div>
+                <div class="quiz-option" onclick="checkAnswer(this, 'incorrect')">Hello</div>
+            </div>
+        </div>
+        
+        <!-- Mini Activity -->
+        <div class="mini-activity">
+            <h2>Mini Activity: Pronunciation Practice</h2>
+            <p>Listen to the greeting and repeat after the speaker:</p>
+            <p><strong>Mɔre</strong> - Hello (formal)</p>
+            <button class="btn-secondary" onclick="playAudio('more')">🔊 Listen</button>
+            <p>Practice saying this greeting 5 times:</p>
+            <textarea placeholder="Type here after practicing..." rows="3" style="width: 100%; margin-top: 1rem;"></textarea>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <a href="twi-level1-intro.html" class="btn-nav prev">← Previous</a>
+            <a href="twi-level1-step2.html" class="btn-nav next">Next →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
