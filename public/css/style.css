@@ -991,8 +991,8 @@ footer {
     border: none;
     cursor: pointer;
     padding: 0;
-    padding-left: 400px;
     z-index: 101;
+    padding-left: 400px;
 }
 
 .mobile-menu-toggle span {
@@ -1013,6 +1013,7 @@ footer {
     
     .mobile-menu-toggle {
         display: flex;
+        padding-left: 170px;
     }
     
     nav ul {
