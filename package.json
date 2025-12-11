@@ -2,10 +2,10 @@
   "name": "ghanalingo",
   "version": "1.0.0",
   "description": "A comprehensive Ghanaian language learning platform",
-  "main": "server-simple.js",
+  "main": "api/server.js",
   "scripts": {
-    "start": "node server-simple.js",
-    "dev": "nodemon server-simple.js"
+    "start": "node api/server.js",
+    "dev": "nodemon api/server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",

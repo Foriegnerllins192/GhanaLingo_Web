@@ -15,6 +15,11 @@
             <div class="logo">
                 <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span></h1>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="dashboard.html" class="active">Dashboard</a></li>
@@ -126,6 +131,10 @@
             // Call the displayUserInfo function from auth.js
             if (typeof displayUserInfo === 'function') {
                 displayUserInfo();
+            }
+            // Update navigation based on login state
+            if (typeof updateNavigation === 'function') {
+                updateNavigation();
             }
         });
     </script>

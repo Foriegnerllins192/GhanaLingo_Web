@@ -18,12 +18,38 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* Improved responsive container */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
 }
 
 /* Header Styles */
@@ -44,6 +70,18 @@ header .container {
 
 .logo h1 {
     font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.4rem;
+    }
 }
 
 nav ul {
@@ -121,9 +159,33 @@ nav ul li a.active {
     margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+}
+
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero p {
+        font-size: 0.9rem;
+    }
 }
 
 .btn-primary {
@@ -155,6 +217,17 @@ nav ul li a.active {
     gap: 2rem;
 }
 
+@media (max-width: 768px) {
+    .features {
+        padding: 2rem 0;
+    }
+    
+    .features .container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
 .feature-card {
     background: white;
     padding: 2rem;
@@ -171,10 +244,36 @@ nav ul li a.active {
 .feature-card h3 {
     color: var(--primary-green);
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
 }
 
 .feature-card p {
     color: var(--dark-gray);
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-card p {
+        font-size: 0.8rem;
+    }
 }
 
 /* Footer */
@@ -191,6 +290,20 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .language-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .language-card {
@@ -218,11 +331,37 @@ footer {
 .language-card h3 {
     color: var(--primary-green);
     margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+    .language-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-card h3 {
+        font-size: 1.1rem;
+    }
 }
 
 .language-card p {
     margin-bottom: 1rem;
     color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .language-card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-card p {
+        font-size: 0.75rem;
+    }
 }
 
 .btn-secondary {
@@ -273,10 +412,36 @@ footer {
     margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+}
+
 .page-subtitle {
     font-size: 1.2rem;
     color: var(--dark-gray);
     margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .page-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .circle-layout {
@@ -284,6 +449,20 @@ footer {
     width: 500px;
     height: 500px;
     margin: 0 auto 3rem;
+}
+
+@media (max-width: 768px) {
+    .circle-layout {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-layout {
+        width: 280px;
+        height: 280px;
+    }
 }
 
 .main-circle {
@@ -300,6 +479,20 @@ footer {
     justify-content: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .main-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-circle {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 .circle-content {
@@ -332,6 +525,20 @@ footer {
     z-index: 20;
 }
 
+@media (max-width: 768px) {
+    .step-circle {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .step-circle {
+        width: 55px;
+        height: 55px;
+    }
+}
+
 .step-circle:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
@@ -349,10 +556,34 @@ footer {
     margin-bottom: 0.2rem;
 }
 
+@media (max-width: 768px) {
+    .step-number {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .step-number {
+        font-size: 1.1rem;
+    }
+}
+
 .step-title {
     display: block;
     font-size: 0.9rem;
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .step-title {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .step-title {
+        font-size: 0.6rem;
+    }
 }
 
 /* Positioning for each step */
@@ -587,6 +818,20 @@ footer {
     padding: 2rem 0;
 }
 
+@media (max-width: 768px) {
+    .culture-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .culture-card {
     background: white;
     border-radius: 10px;
@@ -644,6 +889,20 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .game-card {
@@ -721,20 +980,61 @@ footer {
     resize: vertical;
 }
 
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    padding-left: 400px;
+    z-index: 101;
+}
+
+.mobile-menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: var(--dark-gray);
+    transition: all 0.3s;
+    transform-origin: center;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header .container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
     }
     
     nav ul {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        background: white;
+        width: 70%;
+        height: 100vh;
+        padding: 2rem;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s ease-in-out;
+        margin-top: 0;
+    }
+    
+    nav ul.active {
+        right: 0;
     }
     
     nav ul li {
-        margin: 0.5rem;
+        margin: 1rem 0;
     }
     
     .hero h1 {
@@ -766,5 +1066,58 @@ footer {
     
     .step-title {
         font-size: 0.7rem;
+    }
+    
+    /* Progress steps mobile view */
+    .progress-steps {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .progress-step {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-layout {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .main-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .step-circle {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .step-number {
+        font-size: 1.1rem;
+    }
+    
+    .step-title {
+        font-size: 0.6rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
     }
 }

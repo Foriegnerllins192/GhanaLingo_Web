@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logging Out - Ghana Lingo</title>
+    <title>Logout Test - Ghana Lingo</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/audio.js"></script>
     <script src="js/auth.js"></script>
@@ -36,10 +36,24 @@
     </header>
 
     <!-- Main Content -->
-    <section class="container" style="text-align: center; padding: 3rem 0;">
-        <h1>Logging Out</h1>
-        <p>You are being logged out. Redirecting to homepage...</p>
-        <div class="spinner"></div>
+    <section class="container">
+        <h1>Logout Test Page</h1>
+        <p>This page is for testing the logout functionality.</p>
+        
+        <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 2rem 0;">
+            <h2>Test Instructions</h2>
+            <ol>
+                <li>Log in to the site</li>
+                <li>Visit this page</li>
+                <li>Click the "Logout" button in the navigation</li>
+                <li>Verify that you are redirected to the home page</li>
+                <li>Verify that the navigation shows "Login" instead of "Logout"</li>
+            </ol>
+            
+            <div style="margin-top: 2rem;">
+                <a href="index.html" class="btn-primary">Go to Home Page</a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -48,39 +62,5 @@
             <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="js/auth.js"></script>
-    <script>
-        // Handle logout process
-        document.addEventListener('DOMContentLoaded', function() {
-            // Clear session storage
-            sessionStorage.removeItem('user');
-            
-            // Make API call to logout (clear server session and cookies)
-            fetch('/api/logout', {
-                method: 'POST',
-                credentials: 'include'
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Logout response:', data);
-                // Update navigation
-                if (typeof updateNavigation === 'function') {
-                    updateNavigation();
-                }
-                // Redirect to home after a short delay
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 2000);
-            })
-            .catch(err => {
-                console.error('Logout API error:', err);
-                // Even if API fails, redirect to home
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 2000);
-            });
-        });
-    </script>
 </body>
 </html>
