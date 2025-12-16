@@ -29,6 +29,7 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="teachers.html">Online Teachers</a></li>
                     <li><a href="games.html">Games</a></li>
+                    <li id="admin-link" style="display: none;"><a href="admin.html">Admin</a></li>
                     <li><a href="logout.html" class="btn-login">Logout</a></li>
                 </ul>
             </nav>
@@ -136,7 +137,25 @@
             if (typeof updateNavigation === 'function') {
                 updateNavigation();
             }
+            
+            // Check if user is admin and show admin link
+            checkAdminStatus();
         });
+        
+        // Function to check if user is admin and show admin link
+        async function checkAdminStatus() {
+            try {
+                const response = await fetch('/api/user');
+                if (response.ok) {
+                    const user = await response.json();
+                    // In a real implementation, you would check if the user has admin privileges
+                    // For now, we'll just show the link for demonstration purposes
+                    document.getElementById('admin-link').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error checking admin status:', error);
+            }
+        }
     </script>
 </body>
 </html>

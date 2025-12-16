@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Ghana Lingo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><span style="color: #CE1126;">Ghana</span><span style="color: #006B3F;">Lingo</span> Admin</h1>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Back to Dashboard</a></li>
+                    <li><a href="logout.html" class="btn-login">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container">
+        <h1>Admin Dashboard</h1>
+        
+        <!-- Admin Tabs Navigation -->
+        <div class="admin-tabs">
+            <button class="tab-button active" data-tab="overview">Overview</button>
+            <button class="tab-button" data-tab="users">User Management</button>
+            <button class="tab-button" data-tab="content">Content Management</button>
+            <button class="tab-button" data-tab="bookings">Bookings</button>
+            <button class="tab-button" data-tab="services">Service Requests</button>
+            <button class="tab-button" data-tab="analytics">Analytics</button>
+        </div>
+        
+        <!-- Tab Content Containers -->
+        <div class="tab-content">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-pane active">
+                <h2>System Overview</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <div class="stat-value" id="total-users">Loading...</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Lessons</h3>
+                        <div class="stat-value" id="active-lessons">Loading...</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Bookings</h3>
+                        <div class="stat-value" id="pending-bookings">Loading...</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Service Requests</h3>
+                        <div class="stat-value" id="service-requests">Loading...</div>
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div id="activity-feed">
+                        <p>Loading recent activity...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Users Tab -->
+            <div id="users" class="tab-pane">
+                <h2>User Management</h2>
+                <div class="table-controls">
+                    <input type="text" id="user-search" placeholder="Search users...">
+                    <button id="add-user-btn" class="btn-primary">Add New User</button>
+                </div>
+                <div class="table-container">
+                    <table id="users-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- User data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Content Management Tab -->
+            <div id="content" class="tab-pane">
+                <h2>Content Management</h2>
+                <div class="content-controls">
+                    <button id="add-language-btn" class="btn-primary">Add Language</button>
+                    <button id="add-lesson-btn" class="btn-primary">Add Lesson</button>
+                    <button id="add-article-btn" class="btn-primary">Add Article</button>
+                </div>
+                
+                <div class="content-sections">
+                    <div class="content-section">
+                        <h3>Languages</h3>
+                        <div id="languages-list">
+                            <p>Loading languages...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <h3>Lessons</h3>
+                        <div id="lessons-list">
+                            <p>Loading lessons...</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <h3>Cultural Articles</h3>
+                        <div id="articles-list">
+                            <p>Loading articles...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bookings Tab -->
+            <div id="bookings" class="tab-pane">
+                <h2>Booking Management</h2>
+                <div class="table-controls">
+                    <select id="booking-status-filter">
+                        <option value="all">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="completed">Completed</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <input type="date" id="booking-date-filter">
+                </div>
+                <div class="table-container">
+                    <table id="bookings-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Teacher</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Booking data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Services Tab -->
+            <div id="services" class="tab-pane">
+                <h2>Service Requests</h2>
+                <div class="table-controls">
+                    <select id="service-status-filter">
+                        <option value="all">All Statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <div class="table-container">
+                    <table id="services-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Language</th>
+                                <th>Service Type</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Service request data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Analytics Tab -->
+            <div id="analytics" class="tab-pane">
+                <h2>Analytics & Reports</h2>
+                <div class="analytics-controls">
+                    <select id="report-type">
+                        <option value="user-growth">User Growth</option>
+                        <option value="lesson-completion">Lesson Completion</option>
+                        <option value="booking-trends">Booking Trends</option>
+                        <option value="game-scores">Game Performance</option>
+                    </select>
+                    <input type="date" id="start-date">
+                    <input type="date" id="end-date">
+                    <button id="generate-report-btn" class="btn-primary">Generate Report</button>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="analytics-chart"></canvas>
+                </div>
+                
+                <div class="reports-section">
+                    <h3>Quick Stats</h3>
+                    <div class="quick-stats">
+                        <div class="stat-card">
+                            <h4>New Users (This Month)</h4>
+                            <div class="stat-value" id="new-users-count">Loading...</div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Lessons Completed</h4>
+                            <div class="stat-value" id="lessons-completed">Loading...</div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Avg. Session Duration</h4>
+                            <div class="stat-value" id="avg-session">Loading...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ghana Lingo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding pane
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Load data for the active tab
+                    loadTabData(tabId);
+                });
+            });
+            
+            // Load initial data for the active tab
+            loadTabData('overview');
+            
+            // Update navigation based on login state
+            if (typeof updateNavigation === 'function') {
+                updateNavigation();
+            }
+        });
+        
+        // Function to load data for each tab
+        function loadTabData(tabId) {
+            switch(tabId) {
+                case 'overview':
+                    loadOverviewData();
+                    break;
+                case 'users':
+                    loadUsersData();
+                    break;
+                case 'content':
+                    loadContentData();
+                    break;
+                case 'bookings':
+                    loadBookingsData();
+                    break;
+                case 'services':
+                    loadServicesData();
+                    break;
+                case 'analytics':
+                    loadAnalyticsData();
+                    break;
+            }
+        }
+        
+        // Functions to load data for each tab
+        async function loadOverviewData() {
+            try {
+                const response = await fetch('/api/admin/overview');
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('total-users').textContent = data.totalUsers;
+                    document.getElementById('active-lessons').textContent = data.activeLessons;
+                    document.getElementById('pending-bookings').textContent = data.pendingBookings;
+                    document.getElementById('service-requests').textContent = data.serviceRequests;
+                } else {
+                    throw new Error('Failed to fetch overview data');
+                }
+            } catch (error) {
+                console.error('Error loading overview data:', error);
+                document.getElementById('total-users').textContent = 'Error';
+                document.getElementById('active-lessons').textContent = 'Error';
+                document.getElementById('pending-bookings').textContent = 'Error';
+                document.getElementById('service-requests').textContent = 'Error';
+            }
+        }
+        
+        async function loadUsersData() {
+            try {
+                const response = await fetch('/api/admin/users');
+                if (response.ok) {
+                    const users = await response.json();
+                    const tbody = document.querySelector('#users-table tbody');
+                    
+                    tbody.innerHTML = users.map(user => `
+                        <tr>
+                            <td>${user.id}</td>
+                            <td>${user.username}</td>
+                            <td>${user.email}</td>
+                            <td>${user.first_name} ${user.last_name}</td>
+                            <td>${user.is_admin ? 'Administrator' : 'User'}</td>
+                            <td>${new Date(user.created_at).toLocaleDateString()}</td>
+                            <td>
+                                <button class="btn-secondary" onclick="editUser(${user.id})">Edit</button>
+                                <button class="btn-primary" onclick="deleteUser(${user.id})">Delete</button>
+                            </td>
+                        </tr>
+                    `).join('');
+                } else {
+                    throw new Error('Failed to fetch users data');
+                }
+            } catch (error) {
+                console.error('Error loading users data:', error);
+                document.querySelector('#users-table tbody').innerHTML = '<tr><td colspan="7">Error loading users data</td></tr>';
+            }
+        }
+        
+        async function loadContentData() {
+            try {
+                const response = await fetch('/api/admin/content/stats');
+                if (response.ok) {
+                    const data = await response.json();
+                    document.getElementById('languages-list').innerHTML = `<p>${data.languages} languages</p>`;
+                    document.getElementById('lessons-list').innerHTML = `<p>${data.lessons} lessons</p>`;
+                    document.getElementById('articles-list').innerHTML = `<p>${data.articles} cultural articles</p>`;
+                } else {
+                    throw new Error('Failed to fetch content data');
+                }
+            } catch (error) {
+                console.error('Error loading content data:', error);
+                document.getElementById('languages-list').innerHTML = '<p>Error loading data</p>';
+                document.getElementById('lessons-list').innerHTML = '<p>Error loading data</p>';
+                document.getElementById('articles-list').innerHTML = '<p>Error loading data</p>';
+            }
+        }
+        
+        async function loadBookingsData() {
+            try {
+                const response = await fetch('/api/admin/bookings');
+                if (response.ok) {
+                    const bookings = await response.json();
+                    const tbody = document.querySelector('#bookings-table tbody');
+                    
+                    tbody.innerHTML = bookings.map(booking => `
+                        <tr>
+                            <td>${booking.id}</td>
+                            <td>${booking.user_first_name} ${booking.user_last_name}</td>
+                            <td>${booking.teacher_first_name} ${booking.teacher_last_name}</td>
+                            <td>${booking.booking_date}</td>
+                            <td>${booking.start_time}</td>
+                            <td>${booking.status}</td>
+                            <td>
+                                <select onchange="updateBookingStatus(${booking.id}, this.value)">
+                                    <option value="pending" ${booking.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                    <option value="confirmed" ${booking.status === 'confirmed' ? 'selected' : ''}>Confirmed</option>
+                                    <option value="completed" ${booking.status === 'completed' ? 'selected' : ''}>Completed</option>
+                                    <option value="cancelled" ${booking.status === 'cancelled' ? 'selected' : ''}>Cancelled</option>
+                                </select>
+                            </td>
+                        </tr>
+                    `).join('');
+                } else {
+                    throw new Error('Failed to fetch bookings data');
+                }
+            } catch (error) {
+                console.error('Error loading bookings data:', error);
+                document.querySelector('#bookings-table tbody').innerHTML = '<tr><td colspan="7">Error loading bookings data</td></tr>';
+            }
+        }
+        
+        async function loadServicesData() {
+            try {
+                const response = await fetch('/api/admin/services');
+                if (response.ok) {
+                    const services = await response.json();
+                    const tbody = document.querySelector('#services-table tbody');
+                    
+                    tbody.innerHTML = services.map(service => `
+                        <tr>
+                            <td>${service.id}</td>
+                            <td>${service.name}</td>
+                            <td>${service.email}</td>
+                            <td>${service.language}</td>
+                            <td>${service.service_type}</td>
+                            <td>${service.status}</td>
+                            <td>${new Date(service.created_at).toLocaleDateString()}</td>
+                            <td>
+                                <select onchange="updateServiceStatus(${service.id}, this.value)">
+                                    <option value="pending" ${service.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                    <option value="processing" ${service.status === 'processing' ? 'selected' : ''}>Processing</option>
+                                    <option value="completed" ${service.status === 'completed' ? 'selected' : ''}>Completed</option>
+                                </select>
+                            </td>
+                        </tr>
+                    `).join('');
+                } else {
+                    throw new Error('Failed to fetch services data');
+                }
+            } catch (error) {
+                console.error('Error loading services data:', error);
+                document.querySelector('#services-table tbody').innerHTML = '<tr><td colspan="8">Error loading services data</td></tr>';
+            }
+        }
+        
+        async function loadAnalyticsData() {
+            try {
+                // For now, we'll use placeholder data
+                document.getElementById('new-users-count').textContent = '12';
+                document.getElementById('lessons-completed').textContent = '89';
+                document.getElementById('avg-session').textContent = '24 min';
+                
+                // Placeholder for chart
+                const chartContainer = document.getElementById('analytics-chart');
+                chartContainer.innerHTML = '<div style="height: 300px; display: flex; align-items: center; justify-content: center; color: #666;">Chart visualization would appear here</div>';
+            } catch (error) {
+                console.error('Error loading analytics data:', error);
+                document.getElementById('new-users-count').textContent = 'Error';
+                document.getElementById('lessons-completed').textContent = 'Error';
+                document.getElementById('avg-session').textContent = 'Error';
+            }
+        }
+        
+        // Helper functions for actions
+        function editUser(userId) {
+            alert(`Edit user with ID: ${userId} - This would open an edit form in a real implementation`);
+        }
+        
+        function deleteUser(userId) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                alert(`Delete user with ID: ${userId} - This would send a delete request in a real implementation`);
+            }
+        }
+        
+        async function updateBookingStatus(bookingId, status) {
+            try {
+                const response = await fetch(`/api/admin/bookings/${bookingId}/status`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status })
+                });
+                
+                if (response.ok) {
+                    alert('Booking status updated successfully');
+                } else {
+                    throw new Error('Failed to update booking status');
+                }
+            } catch (error) {
+                console.error('Error updating booking status:', error);
+                alert('Error updating booking status');
+            }
+        }
+        
+        async function updateServiceStatus(serviceId, status) {
+            try {
+                const response = await fetch(`/api/admin/services/${serviceId}/status`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status })
+                });
+                
+                if (response.ok) {
+                    alert('Service request status updated successfully');
+                } else {
+                    throw new Error('Failed to update service request status');
+                }
+            } catch (error) {
+                console.error('Error updating service request status:', error);
+                alert('Error updating service request status');
+            }
+        }
+    </script>
+</body>
+</html>
